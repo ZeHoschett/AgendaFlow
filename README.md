@@ -108,8 +108,8 @@ PROVISIONING_KEY=chave-de-provisionamento
 |---|---|
 | Tenant | `nano-banana` |
 | Portal | `http://localhost:3000/nano-banana` |
-| Admin | joao@nanobanana.com / senha123 |
-| Profissional | maria@nanobanana.com / senha123 |
+| Admin | joao@nanobanana.com /  |
+| Profissional | maria@nanobanana.com /  |
 
 ---
 
