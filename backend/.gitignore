@@ -1,0 +1,16 @@
+# Ambiente virtual — não sobe pro repositório
+venv/
+
+# Variáveis de ambiente — contém senhas e chaves secretas
+.env
+
+# Cache do Python
+_pycache_/
+*.pyc
+*.pyo
+
+# Arquivos do VSCode
+.vscode/
+
+# Logs
+*.log
