@@ -6,6 +6,7 @@ from alembic import context
 # Importa o Base que contém todos os models registrados
 # O Alembic precisa conhecer os models para gerar as migrations automaticamente
 from app.core.database import Base
+from app.core.config import settings
 
 # Importa os models explicitamente para que o Alembic os detecte
 # Cada model importado aqui será monitorado para mudanças
@@ -15,6 +16,10 @@ from app.tenants.models import Tenant
 config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
+
+# A URL do banco vem do .env (DATABASE_URL), nunca do alembic.ini
+# O "%" é escapado porque o Alembic interpola os valores do .ini
+config.set_main_option("sqlalchemy.url", settings.DATABASE_URL.replace("%", "%%"))
 
 # Informa ao Alembic quais tabelas monitorar
 # target_metadata = None significa que o Alembic não gera migrations automáticas
